@@ -12,7 +12,7 @@ def iterar_sobre_df_book(df_book_var: pd.DataFrame, ativos_org_var = {}) -> dict
     ativos_org_var['IBOV'] = 'BMFBOVESPA'
     return ativos_org_var
 
-def atualizar_historical_data(df_book_var: pd.DataFrame, ativos_org_var = {}) -> pd.DataFrame:
+def atualizar_historical_data(df_historical_var: pd.DataFrame, ativos_org_var = {}) -> pd.DataFrame:
     tv = TvDatafeed()
     for symb_dict in ativos_org_var.items():
         new_line = tv.get_hist(*symb_dict, n_bars=5000)[['symbol', 'close']].reset_index()

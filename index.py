@@ -7,6 +7,7 @@ from app import *
 from components import header, fixed_row
 from functions import *
 
+
 ativo_org = {}
 try:
     df_book = pd.read_csv('book_data.csv', index_col=0)
@@ -24,6 +25,6 @@ df_historical_data = atualizar_historical_data(df_historical_data, ativo_org)
 app.layout = dbc.Container([
     dcc.Location(id='url'),
     dcc.Store(id='book_data_store', data=df_book, storage_type='memory'),
-    dcc.Store(id='historical_data_store', date=df_historical_data, storage_type='memory'),
+    dcc.Store(id='historical_data_store', data=df_historical_data, storage_type='memory'),
     dcc.Store(id='layout_data', data=[], storage_type='memory'),
 ])
