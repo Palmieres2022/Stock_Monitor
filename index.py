@@ -3,6 +3,10 @@ from dash.dependencies import Input, Output, State, ALL
 import dash_bootstrap_components as dbc
 import pandas as pd
 
+from app import *
+from components import header, fixed_row
+from functions import *
+
 ativo_org = {}
 try:
     df_book = pd.read_csv('book_data.csv', index_col=0)
